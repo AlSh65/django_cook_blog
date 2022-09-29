@@ -22,4 +22,3 @@
 *           python3 createsuperuser
 7) Запустить проект
  *          python3 manage.py runserver 
-s
