@@ -59,11 +59,11 @@
 
                         <div class="single-post__recipe__details__indegradients">
                             <h5>Ingredients</h5>
-                            <ul>{{ recipe.ingredients }}</ul>
+                            <ul>{{ recipe.ingredients|safe }}</ul>
                         </div>
                         <div class="single-post__recipe__details__direction">
                             <h5>Directions</h5>
-                            <ul>{{ recipe.directions }}</ul>
+                            <ul>{{ recipe.directions|safe }}</ul>
                         </div>
                         {% endfor %}
                     </div>
@@ -133,11 +133,9 @@
                                 <img src="img/categories/single-post/comment/comment-1.jpg" alt="">
                             </div>
                             <div class="single-post__comment__item__text">
-                                <h5>Brandon Kelley</h5>
+                                <h5>h</h5>
                                 <span>15 Aug 2017</span>
-                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                                    adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-                                    magnam.</p>
+                                <p>p</p>
                                 <ul>
                                     <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
                                     <li><a href="#"><i class="fa fa-share-square-o"></i></a></li>

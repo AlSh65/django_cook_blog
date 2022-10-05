@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
@@ -40,7 +41,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, default='')
+    slug = models.SlugField(max_length=200, default='', unique=True)
     image = models.ImageField(upload_to='articles/')
     text = models.TextField()
     create_ad = models.DateTimeField(auto_now_add=True)
@@ -75,8 +76,8 @@ class Recipe(models.Model):
     serves = models.CharField(max_length=50)
     prep_time = models.IntegerField(default=0)
     cook_time = models.IntegerField(default=0)
-    ingredients = models.TextField()
-    directions = models.TextField()
+    ingredients = RichTextField()
+    directions = RichTextField()
     post = models.ForeignKey(
         Post,
         related_name='recipes',
@@ -88,6 +89,9 @@ class Recipe(models.Model):
     class Meta:
         verbose_name = 'Рецепт'
         verbose_name_plural = 'Рецепты'
+
+    def __str__(self):
+        return self.name
 
 
 class Comment(models.Model):
@@ -104,3 +108,6 @@ class Comment(models.Model):
     class Meta:
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
+
+    def __str__(self):
+        return self.name
