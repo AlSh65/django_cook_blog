@@ -1,0 +1,18 @@
+{% load menu_tags  %}
+<ul>
+    {% get_simple_categories as list_category %}
+    {% for category in list_category %}
+    <li>
+        <a href="{% url 'post_list' category.slug %}">{{ category.name }}<span>{{ category.post.count }}</span></a>
+    </li>
+    {% endfor %}
+<!--</ul>-->
+<!--<li><a href="#">Recipes <span>128</span></a></li>-->
+<!--<li><a href="#">Dinner <span>32</span></a></li>-->
+<!--<li><a href="#">Dessert <span>86</span></a></li>-->
+<!--<li class="p-left"><a href="#">Smothie <span>25</span></a></li>-->
+<!--<li class="p-left"><a href="#">Drinks <span>36</span></a></li>-->
+<!--<li class="p-left"><a href="#">Cakes <span>15</span></a></li>-->
+<!--<li><a href="#">Vegan <span>63</span></a></li>-->
+<!--<li><a href="#">Weightloss <span>27</span></a></li>-->
+<!--</ul>-->
